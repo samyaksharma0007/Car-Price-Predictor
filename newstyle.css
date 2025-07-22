@@ -1,0 +1,217 @@
+/* --- General Resets & Typography --- */
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --background-color: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --subtle-text-color: #6c757d;
+    --border-color: #dee2e6;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Main Layout & Card Styling --- */
+.container {
+    width: 100%;
+    max-width: 550px;
+}
+
+.card {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--subtle-text-color);
+    font-size: 1rem;
+}
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+/* --- Prediction Result Page --- */
+.result-card {
+    text-align: center;
+}
+
+.prediction-output {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: #e9f5ff;
+}
+
+.prediction-output h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.prediction-output.error-message {
+    background-color: #f8d7da;
+}
+.prediction-output.error-message h2 {
+    color: var(--error-color);
+    font-size: 1.2rem;
+}
+
+.details-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.details-section h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--subtle-text-color);
+    font-weight: 500;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details-table tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Styling rows with different background colors */
+.details-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.details-table tr:last-child {
+    border-bottom: none;
+}
+
+.details-table td {
+    padding: 1rem;
+}
+
+.details-table td:first-child {
+    font-weight: 500;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--primary-hover-color);
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--subtle-text-color);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .prediction-output h2 {
+        font-size: 1.5rem;
+    }
+}
