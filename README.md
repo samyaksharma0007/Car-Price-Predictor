@@ -26,3 +26,9 @@ This project is a **Machine Learning based Car Price Prediction system** that pr
 ---
 
 ## 📂 Project Structure
+├── data/ # Dataset (if included)
+├── notebooks/ # Jupyter notebooks
+├── models/ # Saved trained models (if any)
+├── requirements.txt # Dependencies
+├── README.md # Project documentation
+└── car_price_predictor.py # Main script (if applicable)
